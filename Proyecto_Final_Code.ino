@@ -36,7 +36,9 @@ void setup() {
 
   //Starts connection to MPU6050 module
   byte status = mpu.begin();
-  while (status != 0) { }
+  while (status != 0) { 
+    //Waits if the MPU-6050 is not connected properly
+    }
 
   //Show message while the sensor is calibrating
   lcd.setCursor(0,0);
@@ -77,8 +79,8 @@ void loop() {
   //Updates the MPU6050
   mpu.update();
 
-  //Gets and displays data every 200 ms
-  if ((millis() - timer) > 200) { 
+  //Gets and displays data every 300 ms
+  if ((millis() - timer) > 300) { 
     //Updates data from HMC5883L module
     sensors_event_t event;
     mag.getEvent(&event);
