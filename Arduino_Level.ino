@@ -92,10 +92,10 @@ void loop() {
     float declination = 0.22;
     heading += declination;
     if (heading < 0) {
-      heading += (2 * PI);
+      heading += (2 * M_PI);
      }
-    if (heading > (2 * PI)) {
-      heading -= (2 * PI);
+    if (heading > (2 * M_PI)) {
+      heading -= (2 * M_PI);
      }
 
     //Calculates the heading of the device in degrees
