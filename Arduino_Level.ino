@@ -88,8 +88,9 @@ void loop() {
     //Calculates the heading of the device
     float heading = atan2(event.magnetic.y, event.magnetic.x);
 
-    //Corrects for the current declination angle of the earth
-    float declination = 0.22;
+    //Corrects for the current declination angle of the location
+    // 8.78 degrees West = 0.15 radians for Bucaramanga, Santander, Colombia
+    float declination = 0.15;
     heading += declination;
     if (heading < 0) {
       heading += (2 * M_PI);
